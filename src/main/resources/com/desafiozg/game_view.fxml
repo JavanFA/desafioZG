@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desafiozg.GameController">
+   <children>
+      <ImageView fx:id="backgroundImageView" fitHeight="650.0" fitWidth="800.0" pickOnBounds="true" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: rgba(0, 0, 0, 0.5); -fx-padding: 10;">
+               <children>
+                  <Label fx:id="nomeJogadorLabel" text="Jogador: ..." textFill="WHITE">
+                     <font><Font name="System Bold" size="18.0" /></font>
+                  </Label>
+                  <Label fx:id="vidaJogadorLabel" text="Vida: ... / ..." textFill="#8aff8a">
+                     <font><Font name="System Bold" size="18.0" /></font>
+                  </Label>
+                  <Label fx:id="artefatosLabel" text="Artefatos: ..." textFill="WHITE">
+                     <font><Font name="System Bold" size="18.0" /></font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button onAction="#onSairDoJogo" text="Sair do Jogo" />
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="mapaImageView" fitHeight="350.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
+                  <VBox fx:id="painelInimigo" alignment="CENTER" managed="false" spacing="5.0" visible="false">
+                     <children>
+                        <Label fx:id="inimigoVidaLabel" text="Vida: 100/100" textFill="WHITE">
+                           <font><Font name="System Bold" size="18.0" /></font>
+                        </Label>
+                        <ImageView fx:id="inimigoImageView" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <HBox fx:id="fasesBotoesBox" alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button fx:id="florestaButton" onAction="#irParaFloresta" text="Floresta" />
+                        <Button fx:id="cavernasButton" onAction="#irParaCavernas" text="Cavernas" />
+                        <Button fx:id="vilaButton" onAction="#irParaVila" text="Vila" />
+                        <Button fx:id="torreButton" onAction="#irParaTorre" text="Torre" />
+                        <Button fx:id="chefeButton" onAction="#enfrentarGlozium" style="-fx-background-color: #8B0000; -fx-text-fill: white;" text="Enfrentar Glozium" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="acoesBatalhaBox" alignment="CENTER" managed="false" spacing="20.0" visible="false">
+                     <children>
+                        <Button onAction="#onLutar" prefWidth="100.0" style="-fx-background-color: #28a745;" text="Lutar" textFill="WHITE">
+                           <font><Font name="System Bold" size="18.0" /></font>
+                        </Button>
+                        <Button onAction="#onFugir" prefWidth="100.0" text="Fugir" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="batalhaBotoesBox" alignment="CENTER" managed="false" spacing="20.0" visible="false">
+                     <children>
+                        <Button onAction="#onAtacarNormal" prefWidth="120.0" text="Ataque Normal" />
+                        <Button fx:id="usarItemButton" onAction="#onUsarItem" prefWidth="120.0" text="Usar Item" />
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <bottom>
+            <TextArea fx:id="logTextArea" editable="false" prefHeight="150.0" style="-fx-opacity: 0.85;" wrapText="true" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>
