@@ -32,11 +32,11 @@ No jogo, o jogador assume o papel de Sandubinha, o último descendente de uma li
 ### Passos
 1.  **Clone o repositório:**
     ```bash
-    git clone [URL_DO_SEU_REPOSITORIO_AQUI]
+    git clone https://github.com/JavanFA/desafioZG
     ```
 2.  **Navegue até a pasta do projeto:**
     ```bash
-    cd rpg-sandubinha-gui
+    cd rpg
     ```
 3.  **Compile e execute o projeto com Maven:**
     O plugin do JavaFX configurado no `pom.xml` facilita a execução. Use o seguinte comando no seu terminal:
