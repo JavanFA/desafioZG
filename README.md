@@ -57,6 +57,5 @@ O Maven irá baixar todas as dependências necessárias e iniciar a aplicação.
 ![Cena de Batalha contra um Monstro](./docs/images/tela_batalha.png)
 
 ## 👨‍💻 Desenvolvedor
-* **[Seu Nome Completo]**
 * **LinkedIn:** https://www.linkedin.com/in/javanfranca/
 * **GitHub:** https://github.com/javanfa
